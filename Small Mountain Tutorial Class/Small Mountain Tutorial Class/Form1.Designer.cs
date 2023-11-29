@@ -45,7 +45,13 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button19 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RowChooser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -214,17 +220,70 @@
             // 
             this.button15.Location = new System.Drawing.Point(35, 304);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(106, 47);
+            this.button15.Size = new System.Drawing.Size(80, 47);
             this.button15.TabIndex = 16;
             this.button15.Text = "第30課-亂數 Random";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(130, 304);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(102, 46);
+            this.button16.TabIndex = 17;
+            this.button16.Text = "第31課-Override 覆寫";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(251, 305);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(123, 46);
+            this.button17.TabIndex = 18;
+            this.button17.Text = "第32課-Override vs Method Hiding";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(386, 304);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(75, 45);
+            this.button18.TabIndex = 19;
+            this.button18.Text = "第38課-多維陣列";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(656, 287);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 64);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(467, 304);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(79, 46);
+            this.button19.TabIndex = 21;
+            this.button19.Text = "第39課-PictureBox";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 491);
+            this.Controls.Add(this.button19);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button18);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
@@ -246,6 +305,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RowChooser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +330,11 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button19;
     }
 }
 

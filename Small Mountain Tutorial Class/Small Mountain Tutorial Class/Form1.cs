@@ -139,7 +139,7 @@ namespace Small_Mountain_Tutorial_Class
 
         private void button10_Click(object sender, EventArgs e)
         {
-            int[] array1 = { 8, 12, 6, 14, 4 , 16 };
+            int[] array1 = { 8, 12, 6, 14, 4, 16 };
             int T = 24;
             string Text = string.Join(",", TwoSumHashOnePass(array1, T)); ;
             MessageBox.Show(Text);
@@ -169,7 +169,7 @@ namespace Small_Mountain_Tutorial_Class
             {
                 string Text = string.Join(",", HashTable); ;
                 int half = target - nums[i];
-                MessageBox.Show("目標：" + target  + "當前數字：" + nums[i] + "目標減當前：" + half + "前後相加：" + (nums[i] + half).ToString() + "目前表已有" + Text);
+                MessageBox.Show("目標：" + target + "當前數字：" + nums[i] + "目標減當前：" + half + "前後相加：" + (nums[i] + half).ToString() + "目前表已有" + Text);
                 if (HashTable.ContainsKey(half))
                     return new int[] { HashTable[half], i };
                 HashTable[nums[i]] = i;
@@ -180,9 +180,9 @@ namespace Small_Mountain_Tutorial_Class
         {
             string Text = "";
             Dictionary<int, string> HashTable = new Dictionary<int, string>();
-            HashTable.Add(0,"牛B");
-            HashTable.Add(1,"阿換");
-            HashTable.Add(2,"挖她路");
+            HashTable.Add(0, "牛B");
+            HashTable.Add(1, "阿換");
+            HashTable.Add(2, "挖她路");
 
             return HashTable[0] + HashTable[1] + HashTable[2];
         }
@@ -194,8 +194,8 @@ namespace Small_Mountain_Tutorial_Class
 
         private void button12_Click(object sender, EventArgs e)
         {
-            User U = new User("Jack","123");
-            string result = U.ComparePassword("12") ? "密碼正確" : "密碼錯誤" ;
+            User U = new User("Jack", "123");
+            string result = U.ComparePassword("12") ? "密碼正確" : "密碼錯誤";
             MessageBox.Show(result);
             MessageBox.Show(U.GetUserName());
             U.Hurt(25);
@@ -213,9 +213,9 @@ namespace Small_Mountain_Tutorial_Class
 
         private void button14_Click(object sender, EventArgs e)
         {
-            Villager V = new Villager();
-            Monster M = new Monster();
-            Monster M2 = new Monster();
+            Villager V = new Villager("V1");
+            Monster M = new Monster("M1");
+            Monster M2 = new Monster("M2");
             MessageBox.Show("" + V.Talk());
             MessageBox.Show("" + V.GetHP());
             M.Attack(V);
@@ -230,9 +230,90 @@ namespace Small_Mountain_Tutorial_Class
 
             Random r = new Random();
 
-            int Injured = r.Next(Power / 2 ,Power);
+            int Injured = r.Next(Power / 2, Power);
 
-            MessageBox.Show("受到傷害："+ Injured);
+            MessageBox.Show("受到傷害：" + Injured);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Villager V = new Villager("V1");
+            Monster M = new Monster("M1");
+
+            MessageBox.Show(V.Touch(M));
+            MessageBox.Show(V.Move());
+
+            MessageBox.Show(M.Touch(V));
+            MessageBox.Show(M.Move());
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Fruit F = new Fruit("水果");
+            Fruit A = new Apple("蘋果");
+            Fruit FO = new Orange();
+            Orange OO = new Orange();
+
+            MessageBox.Show("F：" + F.Say() + "\r\n" + "A：" + A.Say() + "\r\n" + "FO：" + FO.Say() + "\r\n" + "OO：" + OO.Say() + "\r\n" + "OO：" + OO.Say2());
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            int[,] A = new int[,] { { 5, 6 }, { 7, 8 } };
+            int[,] B = new int[,] { { 1, 2 }, { 3, 4 } };
+            int[,] result = Add(A,B);
+            MessageBox.Show("矩陣相加" + " 00:" + result[0, 0] + " 01:" + result[0, 1] + " 10:" + result[1, 0] + " 11:" + result[1, 1]);
+            result = Subtract(A, B);
+            MessageBox.Show("矩陣相減" + " 00:" + result[0, 0] + " 01:" + result[0, 1] + " 10:" + result[1, 0] + " 11:" + result[1, 1]);
+            result = Multiply(A, B);
+            MessageBox.Show("矩陣相乘" + " 00:" + result[0, 0] + " 01:" + result[0, 1] + " 10:" + result[1, 0] + " 11:" + result[1, 1]);
+        }
+        private int[,] Add(int[,] a, int[,] b)
+        {
+            int[,] result = new int[2,2];
+            for (int x = 0; x < a.GetLength(0); x++)
+            {
+                for (int y = 0; y < b.GetLength(1); y++)
+                {
+                    //MessageBox.Show("X" + x + "Y" + y);
+                    result[x, y] = a[x, y] + b[x, y];
+                }
+            }
+            return result;
+        }
+
+        private int[,] Subtract(int[,] a, int[,] b)
+        {
+            int[,] result = new int[2, 2];
+            for (int x = 0; x < a.GetLength(0); x++)
+            {
+                for (int y = 0; y < b.GetLength(1); y++)
+                {
+                    //MessageBox.Show("X" + x + "Y" + y);
+                    result[x, y] = a[x, y] - b[x, y];
+                }
+            }
+            return result;
+        }
+        private int[,] Multiply(int[,] a, int[,] b)
+        {
+            int[,] result = new int[2, 2];
+            for (int x = 0; x < a.GetLength(0); x++)
+            {
+                for (int y = 0; y < b.GetLength(1); y++)
+                {
+                    for (int z = 0; z < a.GetLength(1); z++)
+                    {
+                        result[x, y] += a[x, z] * b[z, y];
+                    }
+                }
+            }
+            return result;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //pictureBox1.Image = Resources.Black.png;
         }
 
         //void TESTT(int[] nums)

@@ -4,13 +4,11 @@ using System.Text;
 
 namespace Small_Mountain_Tutorial_Class
 {
-    class Math
+    class Slime : AbstractMonster
     {
-        public const double PI = 3.14;
-
-        public static int max(int a, int b)
+        protected override string Attack()
         {
-            return a < b ? b : a;
+            return "黏液攻擊";
         }
     }
 }

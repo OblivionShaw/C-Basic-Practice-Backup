@@ -4,15 +4,18 @@ using System.Text;
 
 namespace Small_Mountain_Tutorial_Class
 {
-    class Villager : Creature
+    class Fruit
     {
-        public Villager(string name)
+        protected string name;
+        public Fruit(string name)
         {
             this.name = name;
         }
-        public string Talk()
+
+        public virtual string Say()
         {
-            return "hi";
+            return "我是水果";
         }
+
     }
 }

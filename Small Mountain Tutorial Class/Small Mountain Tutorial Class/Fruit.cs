@@ -17,5 +17,10 @@ namespace Small_Mountain_Tutorial_Class
             return "我是水果";
         }
 
+        public string GetName()
+        {
+            return name;
+        }
+
     }
 }

@@ -12,6 +12,16 @@ namespace Small_Mountain_Tutorial_Class
 {
     public partial class Form1 : Form
     {
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int val = 0, ListNode next = null)
+            {
+                this.val = val;
+                this.next = next;
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -313,7 +323,58 @@ namespace Small_Mountain_Tutorial_Class
 
         private void button19_Click(object sender, EventArgs e)
         {
-            //pictureBox1.Image = Resources.Black.png;
+            if(pictureBox1.Image != Properties.Resources.black)
+                pictureBox1.Image = Properties.Resources.black;
+            else
+                pictureBox1.Image = Properties.Resources.white;
+
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+
+            ListNode New = new ListNode(0);
+            New.next = new ListNode(1);
+            New.next.next = new ListNode(2);
+
+            MessageBox.Show(New.val.ToString()) ;
+            MessageBox.Show(New.next.val.ToString());
+            MessageBox.Show(New.next.next.val.ToString());
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            Creature P = new Player();
+            Creature Evil = new Villager("邪惡村民");
+            IAttackable EvilVillager = new Villager("邪惡村民");
+            ITalkable EvilVillagerTalk = new Villager("邪惡村民");
+            MessageBox.Show("玩家HP：" + P.GetHP());
+            MessageBox.Show(EvilVillagerTalk.Talk(P));
+            MessageBox.Show("邪惡村民攻擊了玩家");
+            EvilVillager.Attack(P);
+            MessageBox.Show("玩家HP：" + P.GetHP());
+            MessageBox.Show(((Player)P).Talk(Evil));
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            Building<Object> M = new Building<Object>();
+            Building<Worker> W = new Building<Worker>();
+            Building<Resident> R = new Building<Resident>();
+
+            M.Add(new Worker("小山貓"));
+            M.Add(new Worker("大山貓"));
+            M.Add(new Resident("哈哈"));
+            W.Add(new Worker("阿換"));
+            W.Add(new Worker("jACK"));
+            W.Add(new Worker("摸摸茶"));
+            R.Add(new Resident("挖它路跌死"));
+            R.Add(new Resident("死哀口"));
+            R.Add(new Resident("修女"));
+            MessageBox.Show(M.ToString());
+            MessageBox.Show(W.ToString());
+            MessageBox.Show(R.ToString());
         }
 
         //void TESTT(int[] nums)

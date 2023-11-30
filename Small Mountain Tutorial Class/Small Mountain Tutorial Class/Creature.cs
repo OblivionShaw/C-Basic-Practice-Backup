@@ -19,7 +19,10 @@ namespace Small_Mountain_Tutorial_Class
             return name + "移動";
         }
 
-
+        public string GetName()
+        {
+            return name;
+        }
         public int GetHP()
         {
             return hp;

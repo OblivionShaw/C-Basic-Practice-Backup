@@ -50,6 +50,9 @@
             this.button18 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RowChooser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -258,7 +261,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(656, 287);
+            this.pictureBox1.Location = new System.Drawing.Point(665, 134);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 64);
             this.pictureBox1.TabIndex = 20;
@@ -274,11 +277,44 @@
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(380, 392);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(56, 49);
+            this.button20.TabIndex = 22;
+            this.button20.Text = "button20";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(559, 304);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(91, 44);
+            this.button21.TabIndex = 23;
+            this.button21.Text = "第48課-介面 (Interface)";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(537, 376);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(147, 64);
+            this.button22.TabIndex = 24;
+            this.button22.Text = " 第 50 課 - 泛型 (Generics) 的初步介紹";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 491);
+            this.Controls.Add(this.button22);
+            this.Controls.Add(this.button21);
+            this.Controls.Add(this.button20);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button18);
@@ -335,6 +371,9 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
     }
 }
 

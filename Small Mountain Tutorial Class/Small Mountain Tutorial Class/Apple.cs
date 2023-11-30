@@ -15,5 +15,6 @@ namespace Small_Mountain_Tutorial_Class
         {
             return "我是蘋果";
         }
+
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Small_Mountain_Tutorial_Class.DelegateTest;
 
 namespace Small_Mountain_Tutorial_Class
 {
@@ -271,7 +272,7 @@ namespace Small_Mountain_Tutorial_Class
         {
             int[,] A = new int[,] { { 5, 6 }, { 7, 8 } };
             int[,] B = new int[,] { { 1, 2 }, { 3, 4 } };
-            int[,] result = Add(A,B);
+            int[,] result = Add(A, B);
             MessageBox.Show("矩陣相加" + " 00:" + result[0, 0] + " 01:" + result[0, 1] + " 10:" + result[1, 0] + " 11:" + result[1, 1]);
             result = Subtract(A, B);
             MessageBox.Show("矩陣相減" + " 00:" + result[0, 0] + " 01:" + result[0, 1] + " 10:" + result[1, 0] + " 11:" + result[1, 1]);
@@ -280,7 +281,7 @@ namespace Small_Mountain_Tutorial_Class
         }
         private int[,] Add(int[,] a, int[,] b)
         {
-            int[,] result = new int[2,2];
+            int[,] result = new int[2, 2];
             for (int x = 0; x < a.GetLength(0); x++)
             {
                 for (int y = 0; y < b.GetLength(1); y++)
@@ -323,7 +324,7 @@ namespace Small_Mountain_Tutorial_Class
 
         private void button19_Click(object sender, EventArgs e)
         {
-            if(pictureBox1.Image != Properties.Resources.black)
+            if (pictureBox1.Image != Properties.Resources.black)
                 pictureBox1.Image = Properties.Resources.black;
             else
                 pictureBox1.Image = Properties.Resources.white;
@@ -337,7 +338,7 @@ namespace Small_Mountain_Tutorial_Class
             New.next = new ListNode(1);
             New.next.next = new ListNode(2);
 
-            MessageBox.Show(New.val.ToString()) ;
+            MessageBox.Show(New.val.ToString());
             MessageBox.Show(New.next.val.ToString());
             MessageBox.Show(New.next.next.val.ToString());
 
@@ -375,6 +376,26 @@ namespace Small_Mountain_Tutorial_Class
             MessageBox.Show(M.ToString());
             MessageBox.Show(W.ToString());
             MessageBox.Show(R.ToString());
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            DelegateTest DT = new DelegateTest();
+            //用法1----------
+            //DT.DoCalcululate(5, 3, DT.Add);
+            //DT.DoCalcululate(5, 3, DT.Multiply);
+            //用法2----------
+            //DelegateTest.Calcululate cal = (x, y) => { return x - y; };
+            //MessageBox.Show(cal(10, 5).ToString());
+            //用法3----------
+            DT.myCalcululateMethod += DT.Add;
+            DT.myCalcululateMethod += DT.Multiply;
+            DT.myCalcululateMethod(2, 3);
+            DT.myCalcululateMethod -= DT.Add;
+            DT.myCalcululateMethod -= DT.Multiply;
+
+
+
         }
 
         //void TESTT(int[] nums)
